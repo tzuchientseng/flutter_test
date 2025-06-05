@@ -48,10 +48,42 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Image.network(
-        'https://lh3.googleusercontent.com/d/18ZlfU8AebjpH19f3Bmhwcn6BWjiAD-vd',
-        height: double.infinity,
-        fit: BoxFit.cover,
+      body: Center(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          margin: const EdgeInsets.all(50.0),
+          padding: const EdgeInsets.all(50.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.0),
+            color: Colors.red,
+          ),
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(50.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25.0),
+                    color: Colors.orange,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Text('You have pushed the button this many times:'),
+                      Text(
+                        '$_counter',
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
